@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 
 
+
+
 import HomeScreen from './HomeScreen';
 import DetailsScreen from './DetailsScreen';
 import ProfileScreen from './ProfileScreen';
@@ -61,7 +63,7 @@ function MainTabScreen() {
           name="Explore"
           component={ExploreScreen}
           options={{
-            tabBarLabel: 'Profile',
+            tabBarLabel: 'Explore',
             tabBarColor: '#d02860',
             tabBarIcon: ({ color }) => (
               <Icon name="ios-aperture" color={color} size={26} />
