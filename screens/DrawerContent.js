@@ -11,7 +11,8 @@ import {
     Drawer,
     Text,
     TouchableRipple,
-    Switch
+    Switch,
+    ToggleButton
 } from 'react-native-paper';
 
 import {
@@ -22,12 +23,18 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export function DrawerContent(props){
+
+  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  }
     return(
         <View style={{flex:1}}>
             <DrawerContentScrollView {...props}>
                 <View style={styles.drawerContent}>
                     <View style={styles.userInfoSection}>
-                        <View>
+                        <View style={{flexDirection:'row', marginTop: 15}}>
                             <Avatar.Image
                                 source={{
                                     uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
@@ -35,12 +42,90 @@ export function DrawerContent(props){
                                 }}
                                 size= {50}
                             />
-                                <View>
+                                <View style={{mariginLeft: 15, flexDirection:'column'}}>
                                     <Title style={styles.title}>Swachchhand Shrestha</Title>
                                     <Caption style={styles.caption}>@Swa-Shrestha</Caption>
                             </View>
                         </View>
+                        <View style={styles.row}>
+                                <View style={styles.section}>
+                                    <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
+                                    <Caption style={styles.caption}>Following</Caption>
+                                </View>
+                                <View style={styles.section}>
+                                    <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
+                                    <Caption style={styles.caption}>Followers</Caption>
+                                </View>
+                        </View>
                     </View>
+
+                    <Drawer.Section style={styles.bottomDrawerSection}>
+                        <DrawerItem
+                        icon={({color, size}) => (
+                            <Icon
+                                name="home-outline"
+                                color={color}
+                                size={size}
+                            />
+                            )}
+                            label="Home"
+                            onPress={() => {}}
+                        />
+                           <DrawerItem
+                        icon={({color, size}) => (
+                            <Icon
+                                name="account-outline"
+                                color={color}
+                                size={size}
+                            />
+                            )}
+                            label="Profile"
+                            onPress={() => {}}
+                        />
+                           <DrawerItem
+                        icon={({color, size}) => (
+                            <Icon
+                                name="bookmark-outline"
+                                color={color}
+                                size={size}
+                            />
+                            )}
+                            label="Bookmarks"
+                            onPress={() => {}}
+                        />
+                           <DrawerItem
+                        icon={({color, size}) => (
+                            <Icon
+                                name="settings-outline"
+                                color={color}
+                                size={size}
+                            />
+                            )}
+                            label="Settings"
+                            onPress={() => {}}
+                        />
+                           <DrawerItem
+                        icon={({color, size}) => (
+                            <Icon
+                                name="account-check-outline"
+                                color={color}
+                                size={size}
+                            />
+                            )}
+                            label="Support"
+                            onPress={() => {}}
+                        />
+                    </Drawer.Section>
+                    <Drawer.Section title="Preferences">
+                          <TouchableRipple onPress={() => {toggleTheme()}}>
+                            <View style={styles.preference}>
+                             <Text>Dark Theme</Text>
+                              <View pointerEvents="none">
+                                <Switch value={isDarkTheme}/>
+                              </View>
+                             </View>
+                          </TouchableRipple>
+                    </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
             <Drawer.Section style={styles.bottomDrawerSection}>
