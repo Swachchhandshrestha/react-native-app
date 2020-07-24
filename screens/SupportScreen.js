@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet,ScrollView,StatusBar,Image,ImageBackground} from 'react-native';
+import Caraousel from 'react-native-snap-carousel';
 
 
 
@@ -13,6 +14,8 @@ const SupportScreen = () => {
                 onPress={() => alert('Button Clicked')}
             />
         </View>
+        
+        
     );
 };
 

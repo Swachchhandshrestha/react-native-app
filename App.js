@@ -9,7 +9,7 @@ import SettingsScreen from './screens/SettingsScreen';
 import BookmarksScreen from './screens/BookmarksScreen';
 
 
- 
+import yellow from "./assets/yellow.jpg";
 
 
 
