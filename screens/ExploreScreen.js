@@ -23,19 +23,19 @@ class App extends Component {
     categories:[
       {
       id:1,
-      name:"cari cature"
+      name:"Mobile"
     },
     {
       id:2,
-      name:"sketch"
+      name:"Laptops"
     },
     {
       id:3,
-      name:"painting"
+      name:"Watch"
     },
     {
       id:4,
-      name:"color"
+      name:"T.V."
     },
   ],
   cards: [
