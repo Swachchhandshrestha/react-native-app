@@ -2,22 +2,22 @@ import * as React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack'
 
-import SupportScreen from './screens/SplashScreen';
-import SettingsScreen from './screens/SignInScreen';
-import BookmarksScreen from './screens/SignUpScreen';
+import SplashScreen from './SplashScreen';
+import LogInScreen from './LogInScreen';
+import SignUpScreen from './SignUpScreen';
 
-const RootStack = createDrawerNavigator();
+const RootStack = createStackNavigator();
 
 
-function App() {
+function RootStackScreen() {
   return (
        <RootStack.Navigator headerMode='none'>
         <RootStack.Screen name="SplashScreen" component={SplashScreen} />
-        <RootStack.Screen name="SignInScreen" component={SignInScreen} />
+        <RootStack.Screen name="SignInScreen" component={LogInScreen} />
         <RootStack.Screen name="SignUpScreen" component={SignUpScreen} />
 
       </RootStack.Navigator>
   );
 }
 
-export default App;
+export default RootStackScreen;
